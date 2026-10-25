@@ -5,10 +5,10 @@ spring:
   application:
     name: eureka-server
   profiles:
-    active: dev
+    active: ${SPRING_PROFILES_ACTIVE:dev}
   config:
     #import: "optional:configserver:http://localhost:8888"
-    import: "optional:configserver:http://179.43.112.128:8888"
+    import: configserver:${CONFIG_SERVER_URL:http://localhost:8888}
 
 eureka:
   client:
